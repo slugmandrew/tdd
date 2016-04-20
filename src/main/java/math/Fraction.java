@@ -1,5 +1,7 @@
 package math;
 
+import com.google.common.base.Objects;
+
 /**
  * @author Drew Spencer
  */
@@ -30,14 +32,15 @@ public class Fraction
     }
 
     @Override
-    public boolean equals(Object other)
+    public boolean equals(Object o)
     {
-        if(other instanceof Fraction)
-        {
-            Fraction that = (Fraction) other;
-            return (this.numerator == that.numerator) && (this.denominator == that.denominator);
-        }
-        return false;
+        if(this == o) return true;
+        if(o == null || getClass() != o.getClass()) return false;
+
+        Fraction that = (Fraction) o;
+
+        return Objects.equal(this.numerator, that.numerator) &&
+                Objects.equal(this.denominator, that.denominator);
     }
 
     @Override
@@ -46,4 +49,9 @@ public class Fraction
         return String.format("%d/%d", numerator, denominator);
     }
 
+    @Override
+    public int hashCode()
+    {
+        return Objects.hashCode(numerator, denominator, 31);
+    }
 }
