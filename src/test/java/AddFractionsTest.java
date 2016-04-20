@@ -1,7 +1,8 @@
-import junit.framework.TestCase;
+import math.Fraction;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -11,12 +12,6 @@ import static org.junit.Assert.fail;
 public class AddFractionsTest
 {
     @Test
-    public void failTest()
-    {
-        fail("not yet implemented");
-    }
-
-    @Test
     public void zeroPlusZero() throws Exception
     {
         Fraction sum = new Fraction(0).plus(new Fraction(0));
@@ -24,31 +19,28 @@ public class AddFractionsTest
         Assert.assertEquals(0, sum.intValue());
     }
 
-
-    class Fraction
+    @Test
+    public void nonZeroPlusZero() throws Exception
     {
+        final Fraction sum = new Fraction(3).plus(new Fraction(0));
 
-        public Fraction(int intValue)
-        {
-
-        }
-
-        public Fraction plus(Fraction input)
-        {
-            return this;
-        }
-
-        public int intValue()
-        {
-            return 0;
-        }
+        assertEquals(3, sum.intValue());
     }
-
 
     @Test
-    public void passTest() throws Exception
+    public void zeroPlusNonZero() throws Exception
     {
-        assertTrue(true);
+        final Fraction sum = new Fraction(0).plus(new Fraction(5));
+
+        assertEquals(5, sum.intValue());
+
     }
 
+    @Test
+    public void nonZeroNonNegativeOperands() throws Exception
+    {
+        Fraction sum = new Fraction(3).plus(new Fraction(4));
+
+        assertEquals(7, sum.intValue());
+    }
 }
