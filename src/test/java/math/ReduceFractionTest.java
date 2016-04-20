@@ -17,7 +17,6 @@ public class ReduceFractionTest
     }
 
     @Test
-    @Ignore("reason")
     public void reduceToNotWholeNumber() throws Exception
     {
         assertEquals(new Fraction(3, 4), new Fraction(6, 8));
