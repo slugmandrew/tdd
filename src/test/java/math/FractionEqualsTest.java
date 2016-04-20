@@ -37,6 +37,6 @@ public class FractionEqualsTest
     @Test
     public void wholeNumberNotEqualToWholeNumber() throws Exception
     {
-        assertNotEquals(new Fraction(6), new Fraction(65));
+        assertNotEquals(new Fraction(6), new Fraction(2));
     }
 }
