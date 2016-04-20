@@ -1,8 +1,5 @@
 package math;
 
-import com.google.common.base.MoreObjects;
-import com.google.common.base.Objects;
-
 /**
  * @author Drew Spencer
  */
@@ -30,16 +27,6 @@ public class Fraction
     public int intValue()
     {
         return numerator;
-    }
-
-    public int getNumerator()
-    {
-        return numerator;
-    }
-
-    public int getDenominator()
-    {
-        return denominator;
     }
 
     @Override
