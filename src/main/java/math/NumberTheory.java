@@ -3,7 +3,7 @@ package math;
 /**
  * @author Drew Spencer
  */
-public class Utils
+public class NumberTheory
 {
     public static int gcd(int a, int b)
     {

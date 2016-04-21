@@ -17,7 +17,7 @@ public class Fraction
     
     public Fraction(int numerator, int denominator)
     {
-        final int gcd = Utils.gcd(numerator, denominator);
+        final int gcd = NumberTheory.gcd(numerator, denominator);
         this.numerator = numerator / gcd;
         this.denominator = denominator / gcd;
     }
